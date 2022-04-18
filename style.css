@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+@font-face {
+    font-family: Norse-Bold;
+    src: url(./img/Norse-Bold.otf);
+}
+
+:root {
+    --white-color: #f9fafc;
+    --black-color: ##292a2a;
+    --accent-color: #5f8462;
+    --accent-color-light: #5eb635;
+    /* Fonts */
+    --font-primary: 'Lato', sans-serif;
+    --font-secondary: Norse-Bold, sans-serif;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 0.625rem;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.4;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(./img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: var(--black-color);
+    backdrop-filter: blur(2rem);
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    min-height: 100vh;
+    max-width: 150rem;
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    justify-items: center;
+}
+
+.logo {
+    background-image: url(./img/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-family: var(--font-secondary);
+    font-size: 2rem;
+    width: 100%;
+}
+
+.logo__title {
+    display: flex;
+    background-color: rgba(0, 0, 0, .6);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: .5rem;
+    position: relative;
+    top: 22%;
+}
+
+.logo__title img {
+    width: 8rem;
+    height: auto;
+}
+
+
+.logo__title h1 {
+    font-size: 8rem;
+}
+
+
+.form-section {
+    display: grid;
+    grid-template-rows: minmax(5rem, 15%) min-content min-content minmax(5rem, 15%);
+    background-color: var(--white-color);
+
+}
+
+.form-section__text {
+    font-size: 2.2rem;
+    font-weight: 700;
+    grid-row-start: 2;
+    padding: 3.5rem;
+}
+
+.form-section__form {
+    grid-row-start: 3;
+}
+
+.form-section__form__input-area {
+    background-color: white;
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, .2);
+    padding: 1.5rem 3.5rem 1.5rem 3.5rem;
+}
+
+.form-section__form__title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.form-section__form__inputs {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: left;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.form-section__form__inputs__input {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+}
+
+input {
+    display: block;
+    font-size: 1.4rem;
+    padding: .3rem .4rem;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, .1);
+    border-radius: .4rem;
+    font-weight: 700;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0px 2.5px 5px rgba(0, 0, 0, .2);
+}
+
+input.error {
+    border-color: red;
+
+}
+
+.password::after {
+    font-size: .8rem;
+    font-weight: 700;
+    color: red;
+    content: "* passwords do not match";
+}
+
+.form-section__form__button {
+    padding: 2.5rem 3.5rem 2.5rem 3.5rem;
+}
+
+button {
+    border-style: none;
+    background-color: var(--accent-color);
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .4);
+}
+
+button:active {
+    transform: translateY(0px);
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.form-section__form__button div {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 1rem;
+}
+
+.login {
+    display: inline-block;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.login:hover {
+    display: inline-block;
+    color: var(--accent-color-light);
+}
+
+@media only screen and (max-width: 850px) {
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: 15% 1fr;
+        height: 100vh;
+    }
+
+    .logo {
+        background-size: cover;
+        font-size: 2rem;
+        width: 100%;
+    }
+
+    .logo__title {
+        position: static;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background-color: rgba(0, 0, 0, .4);
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+
+    .logo__title img {
+        width: 5rem;
+        height: auto;
+    }
+
+    .logo__title h1 {
+        font-size: 5rem;
+    }
+
+    .form-section {
+        grid-template-rows: minmax(5rem, 15%) min-content 1fr;
+        text-align: center;
+
+    }
+
+    .form-section__form__inputs {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+
+    input {
+        display: block;
+        font-size: 1.4rem;
+        padding: .3rem .4rem;
+        width: 25rem;
+    }
+}
