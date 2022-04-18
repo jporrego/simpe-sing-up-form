@@ -1,1 +1,1 @@
-# Sipmle Sign-up Form
+# Simple Sign-up Form
